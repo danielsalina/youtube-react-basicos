@@ -1,0 +1,12 @@
+.component-display {
+    background: #858694;
+    color: #fff;
+    text-align: center;
+    padding: 15px 10px;
+    width: 100%;
+}
+
+.component-display > div {
+    font-size: 3em;
+    font-weight: bold;
+}

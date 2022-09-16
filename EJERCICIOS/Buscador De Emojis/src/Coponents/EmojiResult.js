@@ -8,10 +8,8 @@ export default function EmojiResults ({emojiData}) {
         const clipboard = new Clipboard(".copy-to-clipboard")
 
         console.log(clipboard)
-
-        return clipboard.destroy();
     },[])
-
+    
     return(
         <div>
             {

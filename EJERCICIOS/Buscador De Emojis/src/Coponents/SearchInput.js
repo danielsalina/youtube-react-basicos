@@ -1,3 +1,5 @@
+import "./SearchInput.css";
+
 export default function SearchInput ({textChange}) {
 
     const handleChange = event => {
@@ -5,8 +7,10 @@ export default function SearchInput ({textChange}) {
     }
 
     return(
-        <div>
-            <div><input onChange={handleChange} /></div>
+        <div className="component-search-input">
+            <div>
+                <input onChange={handleChange} />
+            </div>
         </div>
     )
 }

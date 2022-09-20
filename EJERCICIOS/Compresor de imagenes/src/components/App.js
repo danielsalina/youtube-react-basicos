@@ -1,4 +1,5 @@
 import ImageCompressor from "./ImageCompressor";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (

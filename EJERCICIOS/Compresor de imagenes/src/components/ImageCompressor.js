@@ -1,5 +1,6 @@
 import { Component } from "react";
 import imageCompression from 'browser-image-compression';
+import Card from "react-bootstrap/Card";
 
 export default class ImageCompressor extends Component {
   
@@ -55,39 +56,39 @@ export default class ImageCompressor extends Component {
   };
   render(){
     return (
-      <div>
-        <div>
+      <div className="m-5">
+        <div className="text-light text-center">
           <h1>Compresor de imagenes</h1>
           <h3>1. Sube la imagen</h3>
           <h3>2. Da clic sobre el botón comprimir</h3>
           <h3>3. Descarga la imagen comprimida</h3>
         </div>
 
-        <div>
-          <div>
+        <div className="row mt-5">
+          <div className="col-xl-4 col-lg-4 col-md-12 col-sm-12">
             {this.state.imagenSubida ? 
-              <img src={this.state.linkOriginal} alt={""}/>
+              <Card.Img className="ht" variant="top" src={this.state.linkOriginal} alt={""}/>
              : 
-              <img src="https://raw.githubusercontent.com/danielsalina/subirImagen/main/subirImagen.png"alt={""}/>
+             <Card.Img className="ht" variant="top" src="https://raw.githubusercontent.com/danielsalina/subirImagen/main/subirImagen.png"alt={""}/>
             }
-            <div>
-              <input type="file" accept="image/*" onChange={e => this.manejadorDeArchivo(e) } />
+            <div className="d-flex justify-content-center">
+              <input className="mt-2 btn btn-dark w-75" type="file" accept="image/*" onChange={e => this.manejadorDeArchivo(e) } />
             </div>
           </div>
-          <div >
+          <div className="col-xl-4 col-lg-4 col-md-12 mb-5 mt-5 col-sm-12 d-flex justify-content-center align-items-baseline">
             <br />
             {this.state.nuevoArchivo ? 
-              <button type="button" onClick={e => this.manejadorDeEnlaceComprimido(e)} > Comprimir </button>
+              <button className=" btn btn-dark" type="button" onClick={e => this.manejadorDeEnlaceComprimido(e)} > Comprimir </button>
             : 
               <></>
             }
           </div>
 
-          <div >
-            <img src={this.state.enlaceComprimido} alt={""}></img>
+          <div className="col-xl-4 col-lg-4 col-md-12 col-sm-12 mt-3">
+          <Card.Img variant="top" src={this.state.enlaceComprimido} alt={""} />
             {this.state.clickeado ? 
-              <div>
-                <a href={this.state.enlaceComprimido} download={this.state.nuevoArchivo} > Download </a>
+              <div className="d-flex justify-content-center">
+                <a className="mt-2 btn btn-dark w-75" href={this.state.enlaceComprimido} download={this.state.nuevoArchivo} > Descargar </a>
               </div>
              : 
               <></>
